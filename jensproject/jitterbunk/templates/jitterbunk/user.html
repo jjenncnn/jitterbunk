@@ -1,0 +1,23 @@
+{% load static %}
+{% if user_id %}
+    <img src={{user.photo}} width="100" height="100"/>
+    <p>{{ user.username }}</p>
+    {% if bunk_from_list %}
+    <ul>
+    {% for bunk in bunk_from_list %}
+        <li>{{ bunk.from_user }} bunked {{ bunk.to_user }}!</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% if bunk_to_list %}
+    <ul>
+    {% for bunk in bunk_to_list %}
+        <li>{{ bunk.from_user }} bunked {{ bunk.to_user }}!</li>
+    {% endfor %} 
+    </ul>
+    {% else %}
+        <p>No bunk history for this user yet.</p>
+    {% endif %}
+{% else %}
+    <p>User doesn't exist.</p>
+{% endif %}

@@ -1,0 +1,9 @@
+{% if bunks_list %}
+    <ul>
+    {% for bunk in bunks_list %}
+        <li>{{ bunk }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No bunks yet.</p>
+{% endif %}

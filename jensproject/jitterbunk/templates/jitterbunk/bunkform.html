@@ -1,0 +1,9 @@
+<form action="{% url 'jitterbunk:bunk_form' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="bunker">Your username: </label>
+    <input id="bunker" type="text" name="bunker"> 
+    <label for="bunked">Their username: </label> 
+    <input id="bunked" type="text" name="bunked">
+
+    <input type="submit" value="Submit">
+</form>
